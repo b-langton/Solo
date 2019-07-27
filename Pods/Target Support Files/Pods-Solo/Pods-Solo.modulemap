@@ -1,0 +1,6 @@
+framework module Pods_Solo {
+  umbrella header "Pods-Solo-umbrella.h"
+
+  export *
+  module * { export * }
+}
