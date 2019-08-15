@@ -18,180 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SOLO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jp-hY-jYW">
-                                <rect key="frame" x="97" y="88" width="220" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOLO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJE-Ty-flS">
+                                <rect key="frame" x="95" y="79" width="224.5" height="93"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="80"/>
                                 <color key="textColor" red="0.4549019608" green="0.98039215690000003" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.14901960784313725" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bJE-Ty-flS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B6m-pl-jPP"/>
+                            <constraint firstItem="bJE-Ty-flS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="N5n-kw-nEz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="logo" destination="bJE-Ty-flS" id="yoO-Iu-Mkd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="58"/>
-        </scene>
-        <!--Landing-->
-        <scene sceneID="bds-RX-BZc">
-            <objects>
-                <viewController title="Landing" id="1Uc-zE-PjG" customClass="LandingController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6AQ-DJ-JXZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SOLO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dd4-9u-73Z">
-                                <rect key="frame" x="97" y="88" width="220" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="60"/>
-                                <color key="textColor" red="0.5355691185" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.13725490200000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="3w7-nl-2tI"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="8OE-6a-cp3"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Zp-VT-rlB" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="957.97101449275374" y="-669.64285714285711"/>
-        </scene>
-        <!--Filter-->
-        <scene sceneID="7ce-vd-gg8">
-            <objects>
-                <viewController title="Filter" id="Oao-MO-v2T" customClass="FilterController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="P5B-Ak-ozK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SOLO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dH-DD-U6t">
-                                <rect key="frame" x="97" y="88" width="220" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="60"/>
-                                <color key="textColor" red="0.5355691185" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.13725490200000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="erI-Dg-WkL"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S83-xc-B3d" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="48" y="784"/>
-        </scene>
-        <!--Rate-->
-        <scene sceneID="daE-oA-BUv">
-            <objects>
-                <viewController title="Rate" id="PpB-eo-Y5C" customClass="RateController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jGe-br-l1D">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SOLO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QF-pW-TwJ">
-                                <rect key="frame" x="97" y="88" width="220" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="60"/>
-                                <color key="textColor" red="0.5355691185" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.13725490200000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="7sE-bP-M4j"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZVX-N4-BzO" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1010" y="58"/>
-        </scene>
-        <!--ViewEvent-->
-        <scene sceneID="mCF-uA-sqe">
-            <objects>
-                <viewController title="ViewEvent" id="a9y-YA-IHd" customClass="ViewEventController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="faR-ZR-YjH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SOLO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f37-c9-qlO">
-                                <rect key="frame" x="97" y="88" width="220" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="60"/>
-                                <color key="textColor" red="0.5355691185" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.13725490200000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="uJB-Ec-a4n"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="moN-jC-9ST" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1960.8695652173915" y="-658.25892857142856"/>
-        </scene>
-        <!--Raffle-->
-        <scene sceneID="udO-1l-iys">
-            <objects>
-                <viewController title="Raffle" id="EH0-tJ-jgX" customClass="RaffleController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TPf-Ny-4PA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SOLO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79d-C4-AyP">
-                                <rect key="frame" x="97" y="88" width="220" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="60"/>
-                                <color key="textColor" red="0.5355691185" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.13725490200000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="ghK-yA-zEJ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pwg-il-v6m" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1010" y="783"/>
-        </scene>
-        <!--CreateEvent-->
-        <scene sceneID="mJF-ZD-0Rl">
-            <objects>
-                <viewController title="CreateEvent" id="aeY-b9-xTy" customClass="CreateEventController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="clD-lD-l5Z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SOLO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaI-jm-yhb">
-                                <rect key="frame" x="97" y="88" width="220" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="60"/>
-                                <color key="textColor" red="0.5355691185" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.13725490200000001" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="TkI-4y-SIV"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MLF-jC-SxU" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1874" y="58"/>
+            <point key="canvasLocation" x="47.826086956521742" y="57.589285714285708"/>
         </scene>
     </scenes>
 </document>

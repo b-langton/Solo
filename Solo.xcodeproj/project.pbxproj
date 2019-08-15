@@ -14,12 +14,6 @@
 		D925973422ACB68500A096A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D925973322ACB68500A096A3 /* Assets.xcassets */; };
 		D925973722ACB68500A096A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D925973522ACB68500A096A3 /* LaunchScreen.storyboard */; };
 		D99307C222C963BB00AAA719 /* Misc.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D99307C122C963BB00AAA719 /* Misc.rtf */; };
-		D9A64DC722C3171E001EB61C /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A64DC622C3171E001EB61C /* LandingController.swift */; };
-		D9A64DC922C3172D001EB61C /* ViewEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A64DC822C3172D001EB61C /* ViewEventController.swift */; };
-		D9A64DCB22C31736001EB61C /* RateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A64DCA22C31736001EB61C /* RateController.swift */; };
-		D9A64DCD22C31749001EB61C /* CreateEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A64DCC22C31749001EB61C /* CreateEventController.swift */; };
-		D9A64DCF22C31750001EB61C /* RaffleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A64DCE22C31750001EB61C /* RaffleController.swift */; };
-		D9A64DD122C31759001EB61C /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A64DD022C31759001EB61C /* FilterController.swift */; };
 		D9FC072422D291230030D5C0 /* SCSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FC072322D291230030D5C0 /* SCSDKLoginKit.framework */; };
 		D9FC072522D291230030D5C0 /* SCSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9FC072322D291230030D5C0 /* SCSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9FC072722D291360030D5C0 /* SCSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FC072622D291360030D5C0 /* SCSDKCoreKit.framework */; };
@@ -59,12 +53,6 @@
 		D925973622ACB68500A096A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D925973822ACB68500A096A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D99307C122C963BB00AAA719 /* Misc.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Misc.rtf; sourceTree = "<group>"; };
-		D9A64DC622C3171E001EB61C /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
-		D9A64DC822C3172D001EB61C /* ViewEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEventController.swift; sourceTree = "<group>"; };
-		D9A64DCA22C31736001EB61C /* RateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateController.swift; sourceTree = "<group>"; };
-		D9A64DCC22C31749001EB61C /* CreateEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventController.swift; sourceTree = "<group>"; };
-		D9A64DCE22C31750001EB61C /* RaffleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleController.swift; sourceTree = "<group>"; };
-		D9A64DD022C31759001EB61C /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		D9FC072322D291230030D5C0 /* SCSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKLoginKit.framework; path = Pods/SnapSDK/SCSDKLoginKit.framework; sourceTree = "<group>"; };
 		D9FC072622D291360030D5C0 /* SCSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKCoreKit.framework; path = Pods/SnapSDK/SCSDKCoreKit.framework; sourceTree = "<group>"; };
 		D9FC072922D2913A0030D5C0 /* SCSDKBitmojiKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKBitmojiKit.framework; path = Pods/SnapSDK/SCSDKBitmojiKit.framework; sourceTree = "<group>"; };
@@ -144,12 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				D925972E22ACB68300A096A3 /* LoginController.swift */,
-				D9A64DC622C3171E001EB61C /* LandingController.swift */,
-				D9A64DC822C3172D001EB61C /* ViewEventController.swift */,
-				D9A64DCA22C31736001EB61C /* RateController.swift */,
-				D9A64DCC22C31749001EB61C /* CreateEventController.swift */,
-				D9A64DCE22C31750001EB61C /* RaffleController.swift */,
-				D9A64DD022C31759001EB61C /* FilterController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -236,6 +218,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Solo/Pods-Solo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${PODS_ROOT}/SnapSDK/SCSDKBitmojiKit.framework",
 				"${PODS_ROOT}/SnapSDK/SCSDKCoreKit.framework",
 				"${PODS_ROOT}/SnapSDK/SCSDKCreativeKit.framework",
@@ -247,6 +230,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKBitmojiKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCreativeKit.framework",
@@ -286,13 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9A64DC722C3171E001EB61C /* LandingController.swift in Sources */,
-				D9A64DCB22C31736001EB61C /* RateController.swift in Sources */,
-				D9A64DCF22C31750001EB61C /* RaffleController.swift in Sources */,
-				D9A64DD122C31759001EB61C /* FilterController.swift in Sources */,
-				D9A64DC922C3172D001EB61C /* ViewEventController.swift in Sources */,
 				D925972F22ACB68300A096A3 /* LoginController.swift in Sources */,
-				D9A64DCD22C31749001EB61C /* CreateEventController.swift in Sources */,
 				D925972D22ACB68300A096A3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

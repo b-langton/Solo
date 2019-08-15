@@ -6,5 +6,7 @@ target 'Solo' do
   use_frameworks!
 
  pod 'SnapSDK'
+ pod 'SnapKit', '~> 5.0.0'
+
 
 end
