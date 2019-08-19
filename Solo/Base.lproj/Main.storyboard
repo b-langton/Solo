@@ -24,8 +24,16 @@
                                 <color key="textColor" red="0.4549019608" green="0.98039215690000003" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHV-Fm-mOg" colorLabel="IBBuiltInLabel-Green">
+                                <rect key="frame" x="28" y="51" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <segue destination="RcM-Ou-N34" kind="presentation" id="Lfw-Qr-i6O"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.13725490196078433" green="0.14901960784313725" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.15671613072590188" green="0.16207456827871045" blue="0.18812439560436356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bJE-Ty-flS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B6m-pl-jPP"/>
                             <constraint firstItem="bJE-Ty-flS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="N5n-kw-nEz"/>
@@ -38,7 +46,85 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.826086956521742" y="57.589285714285708"/>
+            <point key="canvasLocation" x="-1551" y="-1"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="DxT-uh-5AJ">
+            <objects>
+                <viewController id="RcM-Ou-N34" userLabel="Map" customClass="MapController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wc1-Q1-Oav">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hAN-8s-nEJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiA-rA-fkX">
+                                <rect key="frame" x="355" y="53" width="50" height="50"/>
+                                <state key="normal" image="icons8-add-50"/>
+                                <connections>
+                                    <segue destination="QXr-3u-ebS" kind="presentation" id="ngG-gp-MlJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YiA-rA-fkX" firstAttribute="top" secondItem="uKk-82-fJa" secondAttribute="top" constant="9" id="8eD-aG-bfJ"/>
+                            <constraint firstAttribute="trailing" secondItem="YiA-rA-fkX" secondAttribute="trailing" constant="9" id="B3v-h4-RQa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uKk-82-fJa"/>
+                    </view>
+                    <connections>
+                        <outlet property="MapView" destination="hAN-8s-nEJ" id="EjW-hQ-DhY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSn-Lk-MSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-875.36231884057975" y="2.6785714285714284"/>
+        </scene>
+        <!--AddEvent-->
+        <scene sceneID="oz3-2z-YfF">
+            <objects>
+                <viewController title="AddEvent" id="QXr-3u-ebS" customClass="AddEventController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="psR-Yx-NNe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Create Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGH-Bq-GIf">
+                                <rect key="frame" x="39" y="70" width="337" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="eaf-2B-MW8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                <color key="textColor" red="0.4549019608" green="0.98039215690000003" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Name " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9H-Wq-Rmb">
+                                <rect key="frame" x="39" y="163" width="337" height="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15671613070000001" green="0.1620745683" blue="0.18812439559999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NGH-Bq-GIf" firstAttribute="trailing" secondItem="u9H-Wq-Rmb" secondAttribute="trailing" id="1an-WX-umJ"/>
+                            <constraint firstItem="NGH-Bq-GIf" firstAttribute="centerX" secondItem="psR-Yx-NNe" secondAttribute="centerX" id="33f-VH-FGk"/>
+                            <constraint firstItem="NGH-Bq-GIf" firstAttribute="leading" secondItem="eaZ-ti-Jtm" secondAttribute="leading" constant="39" id="Ngv-ky-nhp"/>
+                            <constraint firstItem="NGH-Bq-GIf" firstAttribute="top" secondItem="eaZ-ti-Jtm" secondAttribute="top" constant="26" id="Ozo-Rc-R0s"/>
+                            <constraint firstItem="NGH-Bq-GIf" firstAttribute="leading" secondItem="u9H-Wq-Rmb" secondAttribute="leading" id="Szv-e1-apv"/>
+                            <constraint firstItem="u9H-Wq-Rmb" firstAttribute="top" secondItem="NGH-Bq-GIf" secondAttribute="bottom" constant="26" id="wQc-CW-sIY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eaZ-ti-Jtm"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h7h-QF-zXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-91.304347826086968" y="2.6785714285714284"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-add-50" width="50" height="50"/>
+    </resources>
 </document>

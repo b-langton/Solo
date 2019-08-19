@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B92E5C723074414005EED30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B92E5C623074414005EED30 /* MapKit.framework */; };
+		7B92E5CB23075843005EED30 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92E5CA23075843005EED30 /* MapController.swift */; };
+		7BDD3D682309D1590023C722 /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD3D672309D1590023C722 /* AddEventController.swift */; };
 		CDD45AA52569E383F0BE57E6 /* Pods_Solo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A802EA7503C7A8AA0C2D8A /* Pods_Solo.framework */; };
 		D925972D22ACB68300A096A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D925972C22ACB68300A096A3 /* AppDelegate.swift */; };
 		D925972F22ACB68300A096A3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D925972E22ACB68300A096A3 /* LoginController.swift */; };
@@ -44,6 +47,9 @@
 /* Begin PBXFileReference section */
 		01A802EA7503C7A8AA0C2D8A /* Pods_Solo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C753EA6B390A9FFC6169F54 /* Pods-Solo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Solo/Pods-Solo.debug.xcconfig"; sourceTree = "<group>"; };
+		7B92E5C623074414005EED30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7B92E5CA23075843005EED30 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		7BDD3D672309D1590023C722 /* AddEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
 		8DCD423C8B08954F7C060C63 /* Pods-Solo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Solo/Pods-Solo.release.xcconfig"; sourceTree = "<group>"; };
 		D925972922ACB68300A096A3 /* Solo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D925972C22ACB68300A096A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B92E5C723074414005EED30 /* MapKit.framework in Frameworks */,
 				D9FC072422D291230030D5C0 /* SCSDKLoginKit.framework in Frameworks */,
 				D9FC072D22D291400030D5C0 /* SCSDKCreativeKit.framework in Frameworks */,
 				D9FC072A22D2913A0030D5C0 /* SCSDKBitmojiKit.framework in Frameworks */,
@@ -87,6 +94,7 @@
 		BA83E0606EBF3BC1B45EE2E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B92E5C623074414005EED30 /* MapKit.framework */,
 				D9FC072322D291230030D5C0 /* SCSDKLoginKit.framework */,
 				D9FC072922D2913A0030D5C0 /* SCSDKBitmojiKit.framework */,
 				D9FC072C22D291400030D5C0 /* SCSDKCreativeKit.framework */,
@@ -132,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				D925972E22ACB68300A096A3 /* LoginController.swift */,
+				7B92E5CA23075843005EED30 /* MapController.swift */,
+				7BDD3D672309D1590023C722 /* AddEventController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -271,6 +281,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D925972F22ACB68300A096A3 /* LoginController.swift in Sources */,
+				7B92E5CB23075843005EED30 /* MapController.swift in Sources */,
+				7BDD3D682309D1590023C722 /* AddEventController.swift in Sources */,
 				D925972D22ACB68300A096A3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
