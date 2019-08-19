@@ -36,6 +36,7 @@
 	<string>Solo://snap-kit/oauth2</string>
 	<key>SCSDKScopes</key>
 	<array>
+        <string>https://auth.snapchat.com/oauth2/api/user.external_id</string>
 		<string>https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar</string>
 		<string>https://auth.snapchat.com/oauth2/api/user.display_name</string>
 	</array>

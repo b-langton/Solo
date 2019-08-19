@@ -59,6 +59,7 @@
 		D925973622ACB68500A096A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D925973822ACB68500A096A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D99307C122C963BB00AAA719 /* Misc.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Misc.rtf; sourceTree = "<group>"; };
+		D9A363C623070A2400D76EC4 /* Solo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Solo.entitlements; sourceTree = "<group>"; };
 		D9FC072322D291230030D5C0 /* SCSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKLoginKit.framework; path = Pods/SnapSDK/SCSDKLoginKit.framework; sourceTree = "<group>"; };
 		D9FC072622D291360030D5C0 /* SCSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKCoreKit.framework; path = Pods/SnapSDK/SCSDKCoreKit.framework; sourceTree = "<group>"; };
 		D9FC072922D2913A0030D5C0 /* SCSDKBitmojiKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKBitmojiKit.framework; path = Pods/SnapSDK/SCSDKBitmojiKit.framework; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		D925972B22ACB68300A096A3 /* Solo */ = {
 			isa = PBXGroup;
 			children = (
+				D9A363C623070A2400D76EC4 /* Solo.entitlements */,
 				D9A64DC522C31617001EB61C /* Controllers */,
 				D925972C22ACB68300A096A3 /* AppDelegate.swift */,
 				D925973022ACB68300A096A3 /* Main.storyboard */,
@@ -181,6 +183,11 @@
 				TargetAttributes = {
 					D925972822ACB68300A096A3 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -430,6 +437,7 @@
 			baseConfigurationReference = 1C753EA6B390A9FFC6169F54 /* Pods-Solo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Solo/Solo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3L5U7D8BM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -453,6 +461,7 @@
 			baseConfigurationReference = 8DCD423C8B08954F7C060C63 /* Pods-Solo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Solo/Solo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3L5U7D8BM;
 				FRAMEWORK_SEARCH_PATHS = (
