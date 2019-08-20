@@ -39,6 +39,7 @@ class MapController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
- 
-
+    
+    @IBAction func addEventClicked(_ sender: Any) {
+    }
 }

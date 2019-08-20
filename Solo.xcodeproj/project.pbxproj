@@ -16,6 +16,7 @@
 		D925973222ACB68300A096A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D925973022ACB68300A096A3 /* Main.storyboard */; };
 		D925973422ACB68500A096A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D925973322ACB68500A096A3 /* Assets.xcassets */; };
 		D925973722ACB68500A096A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D925973522ACB68500A096A3 /* LaunchScreen.storyboard */; };
+		D92B18BE230B98CF00A0C52E /* ViewEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B18BD230B98CF00A0C52E /* ViewEventsController.swift */; };
 		D99307C222C963BB00AAA719 /* Misc.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D99307C122C963BB00AAA719 /* Misc.rtf */; };
 		D9FC072422D291230030D5C0 /* SCSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FC072322D291230030D5C0 /* SCSDKLoginKit.framework */; };
 		D9FC072522D291230030D5C0 /* SCSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9FC072322D291230030D5C0 /* SCSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -58,6 +59,7 @@
 		D925973322ACB68500A096A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D925973622ACB68500A096A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D925973822ACB68500A096A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D92B18BD230B98CF00A0C52E /* ViewEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEventsController.swift; sourceTree = "<group>"; };
 		D99307C122C963BB00AAA719 /* Misc.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Misc.rtf; sourceTree = "<group>"; };
 		D9A363C623070A2400D76EC4 /* Solo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Solo.entitlements; sourceTree = "<group>"; };
 		D9FC072322D291230030D5C0 /* SCSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKLoginKit.framework; path = Pods/SnapSDK/SCSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				D925972E22ACB68300A096A3 /* LoginController.swift */,
 				7B92E5CA23075843005EED30 /* MapController.swift */,
 				7BDD3D672309D1590023C722 /* AddEventController.swift */,
+				D92B18BD230B98CF00A0C52E /* ViewEventsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				D925972F22ACB68300A096A3 /* LoginController.swift in Sources */,
 				7B92E5CB23075843005EED30 /* MapController.swift in Sources */,
+				D92B18BE230B98CF00A0C52E /* ViewEventsController.swift in Sources */,
 				7BDD3D682309D1590023C722 /* AddEventController.swift in Sources */,
 				D925972D22ACB68300A096A3 /* AppDelegate.swift in Sources */,
 			);
@@ -437,7 +441,7 @@
 			baseConfigurationReference = 1C753EA6B390A9FFC6169F54 /* Pods-Solo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Solo/Solo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3L5U7D8BM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -461,7 +465,7 @@
 			baseConfigurationReference = 8DCD423C8B08954F7C060C63 /* Pods-Solo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Solo/Solo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3L5U7D8BM;
 				FRAMEWORK_SEARCH_PATHS = (
