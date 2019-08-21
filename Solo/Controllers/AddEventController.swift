@@ -22,7 +22,7 @@ class AddEventController: UIViewController {
     private var datePicker2: UIDatePicker!
     
     var ref: DatabaseReference!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -50,6 +50,18 @@ class AddEventController: UIViewController {
         view.endEditing(true)
     }        // Do any additional setup after loading the view.
     @IBAction func doneClicked(_ sender: Any) {
+        if EventName.text != ""{
+            ref.child("events/\(EventName.text!)/Address").setValue(Address.text ?? "None")
+            ref.child("events/\(EventName.text!)/Desc").setValue(Desc.text ?? "None")
+            ref.child("events/\(EventName.text!)/endDateInputText)").setValue(endDateInputText.text ?? "None")
+            ref.child("events/\(EventName.text!)/dateInputText").setValue(endDateInputText.text ?? "None")
+        }
+        else{
+            let AlertController = UIAlertController(title: "Empty Field",message: "Please name your event in order to create it!", preferredStyle: .alert)
+            AlertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+            self.present(AlertController, animated: true)
+            
+        }
         self.dismiss(animated: true)
     }
     
