@@ -22,8 +22,29 @@ class LoginController: UIViewController {
         
         //Create login with snapchat button
         let loginButton = SCSDKLoginButton() { (success : Bool, error : Error?) in
-            print("success")
+            if success {
+                //                    let graphQLQuery = "{me{displayName, bitmoji{avatar}}}"
+                //
+                //                    let variables = ["page": "bitmoji"]
+                //
+                //                    SCSDKLoginClient.fetchUserData(withQuery: graphQLQuery, variables: variables, success: { (resources: [AnyHashable: Any]?) in
+                //                        guard let resources = resources,
+                //                            let data = resources["data"] as? [String: Any],
+                //                            let me = data["me"] as? [String: Any] else { return }
+                //
+                //                        self.displayName = (me["displayName"] as? String)!
+                //                        if let bitmoji = me["bitmoji"] as? [String: Any] {
+                //                            self.bitmojiAvatarUrl = (bitmoji["avatar"] as? String)!
+                //                        }
+                //                    }, failure: { (error: Error?, isUserLoggedOut: Bool) in
+                //                        print(error!)
+                //                    })
+                print("Success")
+                return
+            }
+            print("ERROR: " + error!.localizedDescription)
             }!
+        
         view.addSubview(loginButton)
         
         loginButton.translatesAutoresizingMaskIntoConstraints = false
@@ -34,43 +55,12 @@ class LoginController: UIViewController {
             loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
             loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
-        
-        let t = UITapGestureRecognizer(target: self, action: #selector(getUserData))
-        loginButton.addGestureRecognizer(t)
-        }
+    }
     
-    @objc func getUserData(_ sender: UIGestureRecognizer) {
-        if sender.state == .ended {
-            SCSDKLoginClient.login(from: self, completion: { (success: Bool, error: Error?) -> Void in
-                if success {
-//                    let graphQLQuery = "{me{displayName, bitmoji{avatar}}}"
-//
-//                    let variables = ["page": "bitmoji"]
-//
-//                    SCSDKLoginClient.fetchUserData(withQuery: graphQLQuery, variables: variables, success: { (resources: [AnyHashable: Any]?) in
-//                        guard let resources = resources,
-//                            let data = resources["data"] as? [String: Any],
-//                            let me = data["me"] as? [String: Any] else { return }
-//
-//                        self.displayName = (me["displayName"] as? String)!
-//                        if let bitmoji = me["bitmoji"] as? [String: Any] {
-//                            self.bitmojiAvatarUrl = (bitmoji["avatar"] as? String)!
-//                        }
-//                    }, failure: { (error: Error?, isUserLoggedOut: Bool) in
-//                        print(error!)
-//                    })
-                    print("Success")
-                    return
-                }
-                print("ERROR: " + error!.localizedDescription)
-            })
-            
-        }
-    }
-        
-        
-        
-    }
+    
+    
+}
+
 
 
 

@@ -9,8 +9,8 @@
 import UIKit
 
 class AddEventController: UIViewController {
-
-
+    
+    
     
     @IBOutlet weak var endDateInputText: UITextField!
     @IBOutlet weak var dateInputText: UITextField!
@@ -20,7 +20,7 @@ class AddEventController: UIViewController {
     
     private var datePicker: UIDatePicker!
     private var datePicker2: UIDatePicker!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker = UIDatePicker()
@@ -46,17 +46,21 @@ class AddEventController: UIViewController {
         endDateInputText.text = dateFormatter.string(from: datePicker.date)
         view.endEditing(true)
     }        // Do any additional setup after loading the view.
+    @IBAction func doneClicked(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 
