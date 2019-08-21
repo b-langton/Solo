@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B69D6C6230CFB970007FDDC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B69D6C5230CFB970007FDDC /* GoogleService-Info.plist */; };
 		7B92E5C723074414005EED30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B92E5C623074414005EED30 /* MapKit.framework */; };
 		7B92E5CB23075843005EED30 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92E5CA23075843005EED30 /* MapController.swift */; };
 		7BDD3D682309D1590023C722 /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD3D672309D1590023C722 /* AddEventController.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		01A802EA7503C7A8AA0C2D8A /* Pods_Solo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C753EA6B390A9FFC6169F54 /* Pods-Solo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Solo/Pods-Solo.debug.xcconfig"; sourceTree = "<group>"; };
+		7B69D6C5230CFB970007FDDC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7B92E5C623074414005EED30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7B92E5CA23075843005EED30 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		7BDD3D672309D1590023C722 /* AddEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		D925972022ACB68300A096A3 = {
 			isa = PBXGroup;
 			children = (
+				7B69D6C5230CFB970007FDDC /* GoogleService-Info.plist */,
 				D925972B22ACB68300A096A3 /* Solo */,
 				D925972A22ACB68300A096A3 /* Products */,
 				BA83E0606EBF3BC1B45EE2E7 /* Frameworks */,
@@ -219,6 +222,7 @@
 			files = (
 				D925973722ACB68500A096A3 /* LaunchScreen.storyboard in Resources */,
 				D925973422ACB68500A096A3 /* Assets.xcassets in Resources */,
+				7B69D6C6230CFB970007FDDC /* GoogleService-Info.plist in Resources */,
 				D99307C222C963BB00AAA719 /* Misc.rtf in Resources */,
 				D925973222ACB68300A096A3 /* Main.storyboard in Resources */,
 			);
