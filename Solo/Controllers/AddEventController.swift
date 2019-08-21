@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class AddEventController: UIViewController {
     
     
@@ -21,9 +21,12 @@ class AddEventController: UIViewController {
     private var datePicker: UIDatePicker!
     private var datePicker2: UIDatePicker!
     
+    var ref: DatabaseReference!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePicker = UIDatePicker()
+        ref = Database.database().reference()
+                datePicker = UIDatePicker()
         datePicker.datePickerMode = .dateAndTime
         datePicker.addTarget(self, action: #selector(AddEventController.dateChanged(datePicker:)),for: .valueChanged)
         dateInputText.inputView = datePicker
