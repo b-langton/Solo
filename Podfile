@@ -7,6 +7,7 @@ target 'Solo' do
 
  pod 'SnapSDK'
  pod 'SnapKit', '~> 5.0.0'
-
-
+ pod 'Firebase/Auth'
+ pod 'Firebase/Firestore'
+ pod 'Firebase/Database'
 end
