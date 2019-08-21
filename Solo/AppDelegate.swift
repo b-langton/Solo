@@ -8,7 +8,7 @@
 
 import UIKit
 import SCSDKLoginKit
-
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
