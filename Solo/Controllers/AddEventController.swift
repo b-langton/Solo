@@ -8,7 +8,23 @@
 
 import UIKit
 import Firebase
-class AddEventController: UIViewController {
+import MapKit
+import CoreLocation
+class AddEventController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return locationTable.matchingItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let selectedItem = locationTable.matchingItems[indexPath.row].placemark
+        cell.textLabel?.text = selectedItem.name
+        cell.detailTextLabel?.text = locationTable.parseAddress(selectedItem: selectedItem)
+        return cell
+    }
+    
+    
+    
     
     
     
@@ -18,13 +34,19 @@ class AddEventController: UIViewController {
     @IBOutlet weak var EventName: UITextField!
     @IBOutlet weak var Desc: UITextField!
     
+    @IBOutlet weak var AddressSearchBar: UISearchBar!
+    
+   
     private var datePicker: UIDatePicker!
     private var datePicker2: UIDatePicker!
-    
+    var locationManager: CLLocationManager!
     var ref: DatabaseReference!
-    
+    var locationTable: LocationTableController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        AddressSearchBar.delegate = self
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
         ref = Database.database().reference()
                 datePicker = UIDatePicker()
         datePicker.datePickerMode = .dateAndTime
@@ -35,8 +57,9 @@ class AddEventController: UIViewController {
         datePicker2.datePickerMode = .dateAndTime
         datePicker2.addTarget(self, action: #selector(AddEventController.dateChanged2(datePicker:)), for: .valueChanged)
         endDateInputText.inputView = datePicker2
+        locationTable = LocationTableController()
+        locationTable.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
     }
-    
     @objc func dateChanged(datePicker: UIDatePicker){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd hh:mm"
@@ -65,7 +88,43 @@ class AddEventController: UIViewController {
         self.dismiss(animated: true)
     }
     
+    func searchBar( _ searchBar: UISearchBar, textDidChange searchText: String){
+    
+        var localRegion: MKCoordinateRegion
+        let distance: CLLocationDistance = 1200
+        
+        let currentLocation = locationManager.location
+        localRegion = MKCoordinateRegion(center: currentLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 45, longitude: 45), latitudinalMeters: distance, longitudinalMeters: distance)
+        
+        
+        
+        guard let searchBarText = searchBar.text else { return }
+        
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = searchBarText
+        request.region = localRegion
+        let search = MKLocalSearch(request: request)
+        if locationTable.presentingViewController == nil {
+            self.present(locationTable, animated: true)
+            
+            
+            
+        }
+        search.start { response, _ in
+            guard let response = response else {
+                return
+            }
+            
+            self.locationTable.matchingItems = response.mapItems
+            self.locationTable.tableView.reloadData()
+            
+        }
+        
+        
+    
 }
+}
+
 
 
 /*
@@ -77,5 +136,4 @@ class AddEventController: UIViewController {
  // Pass the selected object to the new view controller.
  }
  */
-
 
