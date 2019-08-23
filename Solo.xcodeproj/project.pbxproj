@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B69D6C6230CFB970007FDDC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B69D6C5230CFB970007FDDC /* GoogleService-Info.plist */; };
 		7B92E5C723074414005EED30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B92E5C623074414005EED30 /* MapKit.framework */; };
 		7B92E5CB23075843005EED30 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92E5CA23075843005EED30 /* MapController.swift */; };
 		7BDCEE04230F7FC50065E3B6 /* LocationTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCEE03230F7FC50065E3B6 /* LocationTableController.swift */; };
 		7BDD3D682309D1590023C722 /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD3D672309D1590023C722 /* AddEventController.swift */; };
 		CDD45AA52569E383F0BE57E6 /* Pods_Solo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A802EA7503C7A8AA0C2D8A /* Pods_Solo.framework */; };
+		D90B274023105D55007C8661 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D90B273F23105D55007C8661 /* GoogleService-Info.plist */; };
 		D925972D22ACB68300A096A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D925972C22ACB68300A096A3 /* AppDelegate.swift */; };
 		D925972F22ACB68300A096A3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D925972E22ACB68300A096A3 /* LoginController.swift */; };
 		D925973222ACB68300A096A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D925973022ACB68300A096A3 /* Main.storyboard */; };
@@ -50,12 +50,12 @@
 /* Begin PBXFileReference section */
 		01A802EA7503C7A8AA0C2D8A /* Pods_Solo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C753EA6B390A9FFC6169F54 /* Pods-Solo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Solo/Pods-Solo.debug.xcconfig"; sourceTree = "<group>"; };
-		7B69D6C5230CFB970007FDDC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7B92E5C623074414005EED30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7B92E5CA23075843005EED30 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		7BDCEE03230F7FC50065E3B6 /* LocationTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableController.swift; sourceTree = "<group>"; };
 		7BDD3D672309D1590023C722 /* AddEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
 		8DCD423C8B08954F7C060C63 /* Pods-Solo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Solo/Pods-Solo.release.xcconfig"; sourceTree = "<group>"; };
+		D90B273F23105D55007C8661 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D925972922ACB68300A096A3 /* Solo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D925972C22ACB68300A096A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D925972E22ACB68300A096A3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -114,7 +114,6 @@
 		D925972022ACB68300A096A3 = {
 			isa = PBXGroup;
 			children = (
-				7B69D6C5230CFB970007FDDC /* GoogleService-Info.plist */,
 				D925972B22ACB68300A096A3 /* Solo */,
 				D925972A22ACB68300A096A3 /* Products */,
 				BA83E0606EBF3BC1B45EE2E7 /* Frameworks */,
@@ -133,6 +132,7 @@
 		D925972B22ACB68300A096A3 /* Solo */ = {
 			isa = PBXGroup;
 			children = (
+				D90B273F23105D55007C8661 /* GoogleService-Info.plist */,
 				D9A363C623070A2400D76EC4 /* Solo.entitlements */,
 				D9A64DC522C31617001EB61C /* Controllers */,
 				D925972C22ACB68300A096A3 /* AppDelegate.swift */,
@@ -225,8 +225,8 @@
 			files = (
 				D925973722ACB68500A096A3 /* LaunchScreen.storyboard in Resources */,
 				D925973422ACB68500A096A3 /* Assets.xcassets in Resources */,
-				7B69D6C6230CFB970007FDDC /* GoogleService-Info.plist in Resources */,
 				D99307C222C963BB00AAA719 /* Misc.rtf in Resources */,
+				D90B274023105D55007C8661 /* GoogleService-Info.plist in Resources */,
 				D925973222ACB68300A096A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,13 +242,50 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Solo/Pods-Solo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Solo/Pods-Solo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKBitmojiKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKCoreKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKCreativeKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Solo/Pods-Solo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKBitmojiKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCreativeKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Solo/Pods-Solo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Solo/Pods-Solo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E6A82CAF1EDDE0B4CBD1DA0B /* [CP] Check Pods Manifest.lock */ = {

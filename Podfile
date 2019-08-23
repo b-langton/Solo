@@ -10,4 +10,5 @@ target 'Solo' do
  pod 'Firebase/Auth'
  pod 'Firebase/Firestore'
  pod 'Firebase/Database'
+ pod 'SearchTextField'
 end
