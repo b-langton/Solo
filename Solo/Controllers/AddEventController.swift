@@ -12,23 +12,23 @@ import MapKit
 import CoreLocation
 import SearchTextField
 class AddEventController: UIViewController, CLLocationManagerDelegate {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return locationTable.matchingItems.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-//        let selectedItem = locationTable.matchingItems[indexPath.row].placemark
-//        cell.textLabel?.text = selectedItem.name
-//        cell.detailTextLabel?.text = locationTable.parseAddress(selectedItem: selectedItem)
-//        return cell
-//    }
+    //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //        return locationTable.matchingItems.count
+    //    }
+    //
+    //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+    //        let selectedItem = locationTable.matchingItems[indexPath.row].placemark
+    //        cell.textLabel?.text = selectedItem.name
+    //        cell.detailTextLabel?.text = locationTable.parseAddress(selectedItem: selectedItem)
+    //        return cell
+    //    }
     
-    @IBOutlet weak var endDateInputText: UITextField!
-    @IBOutlet weak var dateInputText: UITextField!
-    @IBOutlet weak var EventName: UITextField!
+    @IBOutlet weak var endDate: UITextField!
+    @IBOutlet weak var startDate: UITextField!
+    @IBOutlet weak var eventName: UITextField!
     @IBOutlet weak var address: SearchTextField!
-    @IBOutlet weak var Desc: UITextField!
+    @IBOutlet weak var desc: UITextField!
     
     
     private var datePicker: UIDatePicker!
@@ -45,12 +45,12 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
         datePicker = UIDatePicker()
         datePicker.datePickerMode = .dateAndTime
         datePicker.addTarget(self, action: #selector(AddEventController.dateChanged(datePicker:)),for: .valueChanged)
-        dateInputText.inputView = datePicker
+        startDate.inputView = datePicker
         
         datePicker2 = UIDatePicker()
         datePicker2.datePickerMode = .dateAndTime
         datePicker2.addTarget(self, action: #selector(AddEventController.dateChanged2(datePicker:)), for: .valueChanged)
-        endDateInputText.inputView = datePicker2
+        endDate.inputView = datePicker2
         locationTable = LocationTableController()
         locationTable.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
         //Set userstoppedtypinghandler for address field
@@ -94,21 +94,23 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
     @objc func dateChanged(datePicker: UIDatePicker){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd hh:mm"
-        dateInputText.text = dateFormatter.string(from: datePicker.date)
+        startDate.text = dateFormatter.string(from: datePicker.date)
         view.endEditing(true)
     }
     @objc func dateChanged2(datePicker: UIDatePicker){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd hh:mm"
-        endDateInputText.text = dateFormatter.string(from: datePicker.date)
+        endDate.text = dateFormatter.string(from: datePicker.date)
         view.endEditing(true)
     }        // Do any additional setup after loading the view.
     @IBAction func doneClicked(_ sender: Any) {
-        if EventName.text != ""{
-            ref.child("events/\(EventName.text!)/Address").setValue(address.text ?? "None")
-            ref.child("events/\(EventName.text!)/Desc").setValue(Desc.text ?? "None")
-            ref.child("events/\(EventName.text!)/endDateInputText)").setValue(endDateInputText.text ?? "None")
-            ref.child("events/\(EventName.text!)/dateInputText").setValue(endDateInputText.text ?? "None")
+        if eventName.text != ""{
+           
+            print("eventname: " + eventName.text! + " address: " + address.text!)
+            ref.child("events/\(eventName.text!)/address").setValue(address.text ?? "None")
+            ref.child("events/\(eventName.text!)/description").setValue(desc.text ?? "None")
+            ref.child("events/\(eventName.text!)/startDate").setValue(startDate.text ?? "None")
+            ref.child("events/\(eventName.text!)/endDate").setValue(endDate.text ?? "None")
         }
         else{
             let AlertController = UIAlertController(title: "Empty Field",message: "Please name your event in order to create it!", preferredStyle: .alert)
