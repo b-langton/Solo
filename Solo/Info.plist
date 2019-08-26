@@ -38,7 +38,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>SCSDKClientId</key>
-	<string>a98d8c2d-94d0-4af9-bed9-0e686208e7d7</string>
+	<string>30bfca74-a655-4bcf-bf85-b5ff34d6ea3b</string>
 	<key>SCSDKRedirectUrl</key>
     <string>solo://snap-kit/oauth2</string>
 	<key>SCSDKScopes</key>
