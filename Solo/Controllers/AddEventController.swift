@@ -30,12 +30,14 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var address: SearchTextField!
     @IBOutlet weak var desc: UITextField!
     
-    
+    private var latitude: Double!
+    private var longitude: Double!
     private var datePicker: UIDatePicker!
     private var datePicker2: UIDatePicker!
     var locationManager: CLLocationManager!
     var ref: DatabaseReference!
     var locationTable: LocationTableController!
+    var localRegion: MKCoordinateRegion!
     override func viewDidLoad() {
         super.viewDidLoad()
         //AddressSearchBar.delegate = self
@@ -61,11 +63,11 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
                     // Show the loading indicator
                     self.address.showLoadingIndicator()
                     
-                    var localRegion: MKCoordinateRegion
+                    
                     let distance: CLLocationDistance = 1200
                     
                     let currentLocation = self.locationManager.location
-                    localRegion = MKCoordinateRegion(center: currentLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 45, longitude: 45), latitudinalMeters: distance, longitudinalMeters: distance)
+                    self.localRegion = MKCoordinateRegion(center: currentLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 45, longitude: 45), latitudinalMeters: distance, longitudinalMeters: distance)
                     
                     
                     
@@ -73,15 +75,16 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
                     
                     let request = MKLocalSearch.Request()
                     request.naturalLanguageQuery = searchBarText
-                    request.region = localRegion
+                    request.region = self.localRegion
                     let search = MKLocalSearch(request: request)
                     
                     search.start { response, _ in
                         guard let response = response else {
                             return
                         }
+                        print(response)
                         // Set new items to filter
-                        self.address.filterStrings(response.mapItems.map({$0.name!}))
+                        self.address.filterStrings(response.mapItems.map({String(describing: $0.placemark).substring(to: String(describing: $0.placemark).range(of: "United States")?.lowerBound ?? String.Index(encodedOffset: 0))}))
                         
                         // Hide loading indicator
                         self.address.stopLoadingIndicator()
@@ -104,13 +107,30 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
         view.endEditing(true)
     }        // Do any additional setup after loading the view.
     @IBAction func doneClicked(_ sender: Any) {
-        if eventName.text != ""{
-           
-            print("eventname: " + eventName.text! + " address: " + address.text!)
+
+
+        if eventName.text != ""  && self.address?.text != ""{
+
+            let request = MKLocalSearch.Request()
+            request.naturalLanguageQuery = address.text
+            request.region = localRegion
+            let search = MKLocalSearch(request: request)
+            search.start { response, _ in
+                guard let response = response else {
+                    return
+                }
+                self.latitude = response.mapItems[0].placemark.coordinate.latitude
+                self.longitude = response.mapItems[0].placemark.coordinate.longitude
+            }
+
+            ref.child("events/\(eventName.text!)/latitude").setValue(latitude ?? "None")
+            ref.child("events/\(eventName.text!)/longitutde").setValue(longitude ?? "None")
             ref.child("events/\(eventName.text!)/address").setValue(address.text ?? "None")
-            ref.child("events/\(eventName.text!)/description").setValue(desc.text ?? "None")
-            ref.child("events/\(eventName.text!)/startDate").setValue(startDate.text ?? "None")
-            ref.child("events/\(eventName.text!)/endDate").setValue(endDate.text ?? "None")
+            ref.child("events/\(eventName.text!)/desc").setValue(desc.text ?? "None")
+            ref.child("events/\(eventName.text!)/endDateInputText)").setValue(endDate.text ?? "None")
+            ref.child("events/\(eventName.text!)/dateInputText").setValue(endDate.text ?? "None")
+
+
         }
         else{
             let AlertController = UIAlertController(title: "Empty Field",message: "Please name your event in order to create it!", preferredStyle: .alert)
