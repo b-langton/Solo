@@ -2941,8 +2941,8 @@
 #define X509_email_free GRPC_SHADOW_X509_email_free
 #define X509_get1_email GRPC_SHADOW_X509_get1_email
 #define X509_get1_ocsp GRPC_SHADOW_X509_get1_ocsp
-#define a2i_IPaddress GRPC_SHADOW_a2i_IPaddress
-#define a2i_IPaddress_NC GRPC_SHADOW_a2i_IPaddress_NC
+#define a2i_IPADDRESS GRPC_SHADOW_a2i_IPADDRESS
+#define a2i_IPADDRESS_NC GRPC_SHADOW_a2i_IPADDRESS_NC
 #define a2i_ipadd GRPC_SHADOW_a2i_ipadd
 #define hex_to_string GRPC_SHADOW_hex_to_string
 #define i2s_ASN1_ENUMERATED GRPC_SHADOW_i2s_ASN1_ENUMERATED

@@ -8,7 +8,6 @@
 
 import UIKit
 import SCSDKLoginKit
-import SnapKit
 
 class LoginController: UIViewController {
     
@@ -39,9 +38,9 @@ class LoginController: UIViewController {
                 //                    }, failure: { (error: Error?, isUserLoggedOut: Bool) in
                 //                        print(error!)
                 //                    })
-                print("Success")
                 return
             }
+            print("Success")
             print("ERROR: " + error!.localizedDescription)
             }!
         

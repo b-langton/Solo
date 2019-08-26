@@ -9,6 +9,7 @@ target 'Solo' do
  pod 'SnapKit', '~> 5.0.0'
  pod 'Firebase/Auth'
  pod 'Firebase/Firestore'
+ pod 'Firebase/Core'
  pod 'Firebase/Database'
  pod 'SearchTextField'
 end
