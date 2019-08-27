@@ -55,6 +55,19 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
         endDate.inputView = datePicker2
         locationTable = LocationTableController()
         locationTable.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
+        //Set Placeholders to light gray
+        endDate.attributedPlaceholder = NSAttributedString(string: "End",
+                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        startDate.attributedPlaceholder = NSAttributedString(string: "Start",
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        eventName.attributedPlaceholder = NSAttributedString(string: "Name",
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        address.attributedPlaceholder = NSAttributedString(string: "Address",
+                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        desc.attributedPlaceholder = NSAttributedString(string: "Description",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+    
+        
         //Set userstoppedtypinghandler for address field
         address.userStoppedTypingHandler = {
             if let criteria = self.address.text {

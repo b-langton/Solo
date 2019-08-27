@@ -38,10 +38,24 @@ class LoginController: UIViewController {
                 //                    }, failure: { (error: Error?, isUserLoggedOut: Bool) in
                 //                        print(error!)
                 //                    })
-                print("Success")
+                //get displayName and Bitmoji URL and set the global variables
+                let graphQLQuery = "{me{displayName, bitmoji{avatar}}}"
+                
+                SCSDKLoginClient.fetchUserData(withQuery: graphQLQuery, variables: nil, success: { (resources: [AnyHashable: Any]?) in
+                    guard let resources = resources,
+                        let data = resources["data"] as? [String: Any],
+                        let me = data["me"] as? [String: Any] else { return }
+                    
+                    self.displayName = me["displayName"] as! String
+                    if let bitmoji = me["bitmoji"] as? [String: Any] {
+                        self.bitmojiAvatarUrl = bitmoji["avatar"] as! String
+                    }
+                }, failure: { (error: Error?, isUserLoggedOut: Bool) in
+                    print("ERROR WITH FETCHING USER INFO: " + error!.localizedDescription)
+                })
                 return
             }
-            print("ERROR: " + error!.localizedDescription)
+            print("ERROR WITH LOGIN: " + error!.localizedDescription)
             }!
         
         view.addSubview(loginButton)
@@ -56,9 +70,9 @@ class LoginController: UIViewController {
             ])
     }
     
-    
-    
 }
+
+
 
 
 
