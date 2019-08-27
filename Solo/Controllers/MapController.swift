@@ -17,6 +17,7 @@ class MapController: UIViewController {
         super.viewDidLoad()
         locationManager.requestAlwaysAuthorization()
         let initiallocation = locationManager.location
+        print(locationManager.location)
         let viewradius: CLLocationDistance = 2000
         if initiallocation != nil {
             centerMapOnLocation(location: initiallocation!)}

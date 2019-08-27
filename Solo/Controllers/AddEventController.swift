@@ -36,7 +36,7 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
     private var datePicker2: UIDatePicker!
     var locationManager: CLLocationManager!
     var ref: DatabaseReference!
-    var locationTable: LocationTableController!
+    
     var localRegion: MKCoordinateRegion!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +53,7 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
         datePicker2.datePickerMode = .dateAndTime
         datePicker2.addTarget(self, action: #selector(AddEventController.dateChanged2(datePicker:)), for: .valueChanged)
         endDate.inputView = datePicker2
-        locationTable = LocationTableController()
-        locationTable.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
+        
         //Set Placeholders to light gray
         endDate.attributedPlaceholder = NSAttributedString(string: "End",
                                                            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
@@ -68,6 +67,7 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
                                                         attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
     
         
+
         //Set userstoppedtypinghandler for address field
         address.userStoppedTypingHandler = {
             if let criteria = self.address.text {
@@ -135,7 +135,7 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
                 self.latitude = response.mapItems[0].placemark.coordinate.latitude
                 self.longitude = response.mapItems[0].placemark.coordinate.longitude
             }
-
+            ref.child("events/\(eventName.text!)/eventName").setValue(eventName.text!)
             ref.child("events/\(eventName.text!)/latitude").setValue(latitude ?? "None")
             ref.child("events/\(eventName.text!)/longitutde").setValue(longitude ?? "None")
             ref.child("events/\(eventName.text!)/address").setValue(address.text ?? "None")

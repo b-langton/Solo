@@ -481,10 +481,10 @@ void ResolvingLoadBalancingPolicy::MaybeAddTraceMessagesForAddressChangesLocked(
     bool resolution_contains_addresses, TraceStringVector* trace_strings) {
   if (!resolution_contains_addresses &&
       previous_resolution_contained_addresses_) {
-    trace_strings->push_back(gpr_strdup("address list became empty"));
+    trace_strings->push_back(gpr_strdup("Address list became empty"));
   } else if (resolution_contains_addresses &&
              !previous_resolution_contained_addresses_) {
-    trace_strings->push_back(gpr_strdup("address list became non-empty"));
+    trace_strings->push_back(gpr_strdup("Address list became non-empty"));
   }
   previous_resolution_contained_addresses_ = resolution_contains_addresses;
 }
@@ -518,12 +518,12 @@ void ResolvingLoadBalancingPolicy::OnResolverResultChangedLocked(
     gpr_log(GPR_INFO, "resolving_lb=%p: got resolver result", this);
   }
   // We only want to trace the address resolution in the follow cases:
-  // (a) address resolution resulted in service config change.
-  // (b) address resolution that causes number of backends to go from
+  // (a) Address resolution resulted in service config change.
+  // (b) Address resolution that causes number of backends to go from
   //     zero to non-zero.
-  // (c) address resolution that causes number of backends to go from
+  // (c) Address resolution that causes number of backends to go from
   //     non-zero to zero.
-  // (d) address resolution that causes a new LB policy to be created.
+  // (d) Address resolution that causes a new LB policy to be created.
   //
   // We track a list of strings to eventually be concatenated and traced.
   TraceStringVector trace_strings;
