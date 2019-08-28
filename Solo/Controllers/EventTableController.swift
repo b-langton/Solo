@@ -32,14 +32,14 @@ class EventTableController : UITableViewController{
         
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(EventCell.self, forCellReuseIdentifier: cellId)
        
     
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt  indexPath: IndexPath)-> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = eventData[indexPath.row]["eventName"] as! String
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EventCell
+        cell.event = eventData[indexPath.row]
       
         return cell
     }
@@ -47,6 +47,9 @@ class EventTableController : UITableViewController{
         
         print(self.eventData, "yay")
         return self.eventData.count
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)-> CGFloat{
+        return 80
     }
     @IBAction func backClicked(_ sender: Any) {
         self.dismiss(animated: true)
@@ -62,6 +65,8 @@ class EventCell: UITableViewCell{
     var event: [String:Any]! {
         didSet {
             eventNameLabel.text = event["eventName"] as! String
+            descriptionLabel.text = event["desc"] as! String
+            startTimeLabel.text = event["dateInputText"] as! String
             print(event["eventName"])
         }
     }
@@ -73,17 +78,77 @@ class EventCell: UITableViewCell{
         lbl.textAlignment = .left
         return lbl
     }()
+    private let startTimeLabel : UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .black
+        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.textAlignment = .right
+        return lbl
+    }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(eventNameLabel)
+        addSubview(descriptionLabel)
+        addSubview(startTimeLabel)
+        eventNameLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft:10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
+        descriptionLabel.anchor(top: eventNameLabel.bottomAnchor, left: eventNameLabel.leftAnchor, bottom: nil, right: nil, paddingTop: 3, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width * 0.9, height: 0, enableInsets: false)
+        startTimeLabel.anchor(top: eventNameLabel.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom:0, paddingRight: 10, width: frame.size.width/2, height: 0, enableInsets: false )
         print("cell init")
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    private let descriptionLabel : UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .black
+        lbl.font = UIFont.systemFont(ofSize: 13)
+        lbl.textAlignment = .left
+        lbl.numberOfLines = 0
+        return lbl
+    }()
+    
+    
     
 }
 
 
+extension UIView {
+    
+    func anchor (top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat, enableInsets: Bool) {
+        var topInset = CGFloat(0)
+        var bottomInset = CGFloat(0)
+        
+        if #available(iOS 11, *), enableInsets {
+            let insets = self.safeAreaInsets
+            topInset = insets.top
+            bottomInset = insets.bottom
+            
+            
+        }
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let top = top {
+            self.topAnchor.constraint(equalTo: top, constant: paddingTop+topInset).isActive = true
+        }
+        if let left = left {
+            self.leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+        }
+        if let right = right {
+            rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+        }
+        if let bottom = bottom {
+            bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom-bottomInset).isActive = true
+        }
+        if height != 0 {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+        if width != 0 {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+        
+    }
+    
+}
 
