@@ -49,6 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		439E6CD6080401977575148B /* Pods-Solo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Solo/Pods-Solo.release.xcconfig"; sourceTree = "<group>"; };
+		4975A53969A658D7F81ADE43 /* Pods-Solo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Solo/Pods-Solo.debug.xcconfig"; sourceTree = "<group>"; };
 		60A2B74860F1159361BE1848 /* Pods_Solo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B37D45490E2D94A7069CF8A /* Pods-Solo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.debug.xcconfig"; path = "Target Support Files/Pods-Solo/Pods-Solo.debug.xcconfig"; sourceTree = "<group>"; };
 		7B92E5C623074414005EED30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -96,6 +98,8 @@
 			children = (
 				7B37D45490E2D94A7069CF8A /* Pods-Solo.debug.xcconfig */,
 				7D98875E422CE4F4C405FE4A /* Pods-Solo.release.xcconfig */,
+				4975A53969A658D7F81ADE43 /* Pods-Solo.debug.xcconfig */,
+				439E6CD6080401977575148B /* Pods-Solo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
