@@ -134,15 +134,15 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
                 }
                 self.latitude = response.mapItems[0].placemark.coordinate.latitude
                 self.longitude = response.mapItems[0].placemark.coordinate.longitude
+                self.ref.child("events/\(self.eventName.text!)/eventName").setValue(self.eventName.text!)
+                self.ref.child("events/\(self.eventName.text!)/latitude").setValue(self.latitude ?? "None")
+                self.ref.child("events/\(self.eventName.text!)/longitude").setValue(self.longitude ?? "None")
+                self.ref.child("events/\(self.eventName.text!)/address").setValue(self.address.text ?? "None")
+                self.ref.child("events/\(self.eventName.text!)/desc").setValue(self.desc.text ?? "None")
+                self.ref.child("events/\(self.eventName.text!)/endDateInputText)").setValue(self.endDate.text ?? "None")
+                self.ref.child("events/\(self.eventName.text!)/dateInputText").setValue(self.startDate.text ?? "None")
             }
-            ref.child("events/\(eventName.text!)/eventName").setValue(eventName.text!)
-            ref.child("events/\(eventName.text!)/latitude").setValue(latitude ?? "None")
-            ref.child("events/\(eventName.text!)/longitutde").setValue(longitude ?? "None")
-            ref.child("events/\(eventName.text!)/address").setValue(address.text ?? "None")
-            ref.child("events/\(eventName.text!)/desc").setValue(desc.text ?? "None")
-            ref.child("events/\(eventName.text!)/endDateInputText)").setValue(endDate.text ?? "None")
-            ref.child("events/\(eventName.text!)/dateInputText").setValue(endDate.text ?? "None")
-
+           
 
         }
         else{

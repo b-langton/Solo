@@ -8,10 +8,11 @@
 import UIKit
 import MapKit
 import Firebase
-class EventTableController : UITableViewController{
+class EventTableController : UITableViewController, CLLocationManagerDelegate{
     let cellId = "cellId"
     var ref: DatabaseReference!
     var eventData: Array<[String:Any]>!
+    var locationManager: CLLocationManager!
     
     override func loadView(){
         super.loadView()
@@ -31,7 +32,8 @@ class EventTableController : UITableViewController{
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
         tableView.register(EventCell.self, forCellReuseIdentifier: cellId)
        
     
@@ -39,13 +41,13 @@ class EventTableController : UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt  indexPath: IndexPath)-> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! EventCell
+        cell.location = locationManager.location
         cell.event = eventData[indexPath.row]
-      
-        return cell
+                return cell
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print(self.eventData, "yay")
+        
         return self.eventData.count
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)-> CGFloat{
@@ -61,16 +63,30 @@ class EventTableController : UITableViewController{
 
 class EventCell: UITableViewCell{
 
+    var location: CLLocation!    //location must be set before event!
+       
+        
     
     var event: [String:Any]! {
         didSet {
             eventNameLabel.text = event["eventName"] as! String
             descriptionLabel.text = event["desc"] as! String
             startTimeLabel.text = event["dateInputText"] as! String
-            print(event["eventName"])
+            if String(describing: event["latitude"]!) != "None" && String(describing: event["longitude"]!) !=  "None" && location != nil {
+        
+                let cellLocation = CLLocation(latitude: Double( String(describing: event["latitude"]!)) as! CLLocationDegrees, longitude: Double(String(describing: event["longitude"]!)) as! CLLocationDegrees )
+                
+                distanceLabel.text = String( describing: Double(Int(cellLocation.distance(from : location)/1609*100))/100) + " mi."
+            }
         }
     }
-    
+    private let distanceLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .gray
+        lbl.font = UIFont.systemFont(ofSize: 13)
+        lbl.textAlignment = .right
+        return lbl
+    }()
     private let eventNameLabel : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
@@ -87,14 +103,18 @@ class EventCell: UITableViewCell{
     }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        addSubview(distanceLabel)
         addSubview(eventNameLabel)
         addSubview(descriptionLabel)
         addSubview(startTimeLabel)
         eventNameLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft:10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
         descriptionLabel.anchor(top: eventNameLabel.bottomAnchor, left: eventNameLabel.leftAnchor, bottom: nil, right: nil, paddingTop: 3, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width * 0.9, height: 0, enableInsets: false)
         startTimeLabel.anchor(top: eventNameLabel.topAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom:0, paddingRight: 10, width: frame.size.width/2, height: 0, enableInsets: false )
-        print("cell init")
+        distanceLabel.anchor(top: nil, left: nil, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 5, paddingRight: 0, width: frame.size.width/3, height: 0, enableInsets: false )
+        
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
