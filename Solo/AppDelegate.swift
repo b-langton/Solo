@@ -9,15 +9,22 @@
 import UIKit
 import SCSDKLoginKit
 import Firebase
+var eventData: Array<[String:Any]> = []
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var ref: DatabaseReference!
     var window: UIWindow?
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        ref = Database.database().reference()
+        ref.child("events").observeSingleEvent(of: .value, with: { (snapshot) in
+            for child: DataSnapshot in snapshot.children.allObjects as! [DataSnapshot] {
+                eventData.append((child.value as? [String:Any])!)
+                
+            }})
+        print(eventData.count, "init")
         return true
     }
 

@@ -11,7 +11,7 @@ import Firebase
 class EventTableController : UITableViewController, CLLocationManagerDelegate{
     let cellId = "cellId"
     var ref: DatabaseReference!
-    var eventData: Array<[String:Any]>!
+    
     var locationManager: CLLocationManager!
     
     override func loadView(){
@@ -21,9 +21,9 @@ class EventTableController : UITableViewController, CLLocationManagerDelegate{
        
         
     }
-    init(data: Array<[String:Any]>){
+    init(){
         super.init(style: .plain)
-        self.eventData = data
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,7 +48,7 @@ class EventTableController : UITableViewController, CLLocationManagerDelegate{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
-        return self.eventData.count
+        return eventData.count
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)-> CGFloat{
         return 80
