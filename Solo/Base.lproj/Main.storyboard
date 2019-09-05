@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="70p-Wt-YwW">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--TabBar-->
         <scene sceneID="yba-wN-MKo">
             <objects>
-                <tabBarController id="70p-Wt-YwW" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" title="TabBar" id="70p-Wt-YwW" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="bottom" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="K1m-fa-ZhW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -37,7 +37,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Login" id="BYZ-38-t0r" customClass="LoginController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" title="Login" id="BYZ-38-t0r" customClass="LoginController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,14 +48,6 @@
                                 <color key="textColor" red="0.4549019608" green="0.98039215690000003" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHV-Fm-mOg" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="28" y="51" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Skip"/>
-                                <connections>
-                                    <segue destination="70p-Wt-YwW" kind="show" id="KQT-Ua-qzu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.039215686274509803" green="0.047058823529411764" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -66,16 +58,17 @@
                     </view>
                     <connections>
                         <outlet property="logo" destination="bJE-Ty-flS" id="yoO-Iu-Mkd"/>
+                        <segue destination="70p-Wt-YwW" kind="show" identifier="goToLanding" id="5fl-Wu-97r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1681" y="3"/>
+            <point key="canvasLocation" x="-1839" y="3"/>
         </scene>
         <!--Map-->
         <scene sceneID="DxT-uh-5AJ">
             <objects>
-                <viewController id="RcM-Ou-N34" userLabel="Map" customClass="MapController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="RcM-Ou-N34" userLabel="Map" customClass="MapController" customModule="Solo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wc1-Q1-Oav">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,8 +105,17 @@
                                 </constraints>
                                 <state key="normal" image="icons8-add-50"/>
                                 <connections>
-                                    <action selector="addEventClicked:" destination="RcM-Ou-N34" eventType="touchUpInside" id="C6r-kO-88f"/>
                                     <segue destination="QXr-3u-ebS" kind="presentation" id="ngG-gp-MlJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3A-Ib-PdJ">
+                                <rect key="frame" x="10" y="703" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="1k6-ix-Dya"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZvR-zf-f9W"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="bitmojiClicked:" destination="RcM-Ou-N34" eventType="touchUpInside" id="I7W-xM-paI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,12 +126,14 @@
                             <constraint firstItem="hAN-8s-nEJ" firstAttribute="trailing" secondItem="uKk-82-fJa" secondAttribute="trailing" id="8gH-ow-en5"/>
                             <constraint firstItem="hAN-8s-nEJ" firstAttribute="leading" secondItem="uKk-82-fJa" secondAttribute="leading" id="8xM-0J-GVx"/>
                             <constraint firstItem="hAN-8s-nEJ" firstAttribute="top" secondItem="wc1-Q1-Oav" secondAttribute="top" id="FcV-bE-08I"/>
+                            <constraint firstItem="aCu-Rp-qAl" firstAttribute="top" secondItem="b3A-Ib-PdJ" secondAttribute="bottom" constant="10" id="KrE-gH-2df"/>
                             <constraint firstItem="hn7-63-auc" firstAttribute="centerX" secondItem="wc1-Q1-Oav" secondAttribute="centerX" id="O7U-Tv-Opz"/>
                             <constraint firstItem="hAN-8s-nEJ" firstAttribute="centerX" secondItem="wc1-Q1-Oav" secondAttribute="centerX" id="W4c-sC-Zpm"/>
                             <constraint firstItem="aCu-Rp-qAl" firstAttribute="leading" secondItem="uKk-82-fJa" secondAttribute="leading" id="a95-jG-w66"/>
                             <constraint firstItem="uKk-82-fJa" firstAttribute="bottom" secondItem="aCu-Rp-qAl" secondAttribute="bottom" id="f0Q-VQ-YCs"/>
                             <constraint firstItem="YiA-rA-fkX" firstAttribute="trailing" secondItem="uKk-82-fJa" secondAttribute="trailing" id="lcp-eK-Q9W"/>
                             <constraint firstItem="hn7-63-auc" firstAttribute="leading" secondItem="uKk-82-fJa" secondAttribute="leading" constant="15" id="m9L-j7-myy"/>
+                            <constraint firstItem="b3A-Ib-PdJ" firstAttribute="leading" secondItem="uKk-82-fJa" secondAttribute="leading" constant="10" id="ozS-eA-5LK"/>
                             <constraint firstItem="hn7-63-auc" firstAttribute="top" secondItem="uKk-82-fJa" secondAttribute="top" constant="25" id="t4K-21-P2s"/>
                             <constraint firstItem="aCu-Rp-qAl" firstAttribute="top" secondItem="hAN-8s-nEJ" secondAttribute="bottom" id="vCl-Jr-8HE"/>
                             <constraint firstItem="aCu-Rp-qAl" firstAttribute="top" secondItem="YiA-rA-fkX" secondAttribute="bottom" id="wnA-hB-1LP"/>
@@ -140,6 +144,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MapView" destination="hAN-8s-nEJ" id="EjW-hQ-DhY"/>
+                        <outlet property="bitmoji" destination="b3A-Ib-PdJ" id="eN1-Fa-kkb"/>
                         <outlet property="searchDisplayController" destination="PvB-Up-vWo" id="Fyr-AD-WJW"/>
                     </connections>
                 </viewController>

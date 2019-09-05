@@ -12,8 +12,6 @@ import SCSDKLoginKit
 class LoginController: UIViewController {
     
     @IBOutlet weak var logo: UILabel!
-    var displayName = ""
-    var bitmojiAvatarUrl = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,23 +20,9 @@ class LoginController: UIViewController {
         //Create login with snapchat button
         let loginButton = SCSDKLoginButton() { (success : Bool, error : Error?) in
             if success {
-                //                    let graphQLQuery = "{me{displayName, bitmoji{avatar}}}"
-                //
-                //                    let variables = ["page": "bitmoji"]
-                //
-                //                    SCSDKLoginClient.fetchUserData(withQuery: graphQLQuery, variables: variables, success: { (resources: [AnyHashable: Any]?) in
-                //                        guard let resources = resources,
-                //                            let data = resources["data"] as? [String: Any],
-                //                            let me = data["me"] as? [String: Any] else { return }
-                //
-                //                        self.displayName = (me["displayName"] as? String)!
-                //                        if let bitmoji = me["bitmoji"] as? [String: Any] {
-                //                            self.bitmojiAvatarUrl = (bitmoji["avatar"] as? String)!
-                //                        }
-                //                    }, failure: { (error: Error?, isUserLoggedOut: Bool) in
-                //                        print(error!)
-                //                    })
-                //get displayName and Bitmoji URL and set the global variables
+                //Store boolean so user does not have to re-login
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                //Fetch user data
                 let graphQLQuery = "{me{displayName, bitmoji{avatar}}}"
                 
                 SCSDKLoginClient.fetchUserData(withQuery: graphQLQuery, variables: nil, success: { (resources: [AnyHashable: Any]?) in
@@ -46,13 +30,15 @@ class LoginController: UIViewController {
                         let data = resources["data"] as? [String: Any],
                         let me = data["me"] as? [String: Any] else { return }
                     
-                    self.displayName = me["displayName"] as! String
+                    displayName = me["displayName"] as! String
                     if let bitmoji = me["bitmoji"] as? [String: Any] {
-                        self.bitmojiAvatarUrl = bitmoji["avatar"] as! String
+                        bitmojiAvatarUrl = bitmoji["avatar"] as! String
                     }
                 }, failure: { (error: Error?, isUserLoggedOut: Bool) in
                     print("ERROR WITH FETCHING USER INFO: " + error!.localizedDescription)
                 })
+                //Move to map screen after login is complete
+                self.dismiss(animated: true)
                 return
             }
             print("ERROR WITH LOGIN: " + error!.localizedDescription)
