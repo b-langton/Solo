@@ -11,10 +11,11 @@ import MapKit
 import CoreLocation
 import UserNotifications
 import Firebase
-
+import SCSDKBitmojiKit
 class MapController: UIViewController {
     var ref: DatabaseReference!
     @IBOutlet weak var MapView: MKMapView!
+    @IBOutlet weak var bitmoji: SCSDKBitmojiIconView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let locationManager = CLLocationManager()

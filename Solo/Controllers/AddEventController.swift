@@ -11,7 +11,7 @@ import Firebase
 import MapKit
 import CoreLocation
 import SearchTextField
-class AddEventController: UIViewController, CLLocationManagerDelegate {
+class AddEventController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //        return locationTable.matchingItems.count
     //    }
@@ -23,6 +23,7 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
     //        cell.detailTextLabel?.text = locationTable.parseAddress(selectedItem: selectedItem)
     //        return cell
     //    }
+    
     
     @IBOutlet weak var endDate: UITextField!
     @IBOutlet weak var startDate: UITextField!
@@ -42,6 +43,8 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         //AddressSearchBar.delegate = self
         locationManager = CLLocationManager()
+        eventName.delegate = self
+        desc.delegate = self
         locationManager.delegate = self
         ref = Database.database().reference()
         datePicker = UIDatePicker()
@@ -155,7 +158,15 @@ class AddEventController: UIViewController, CLLocationManagerDelegate {
     }
     //            self.locationTable.matchingItems = response.mapItems
     //            self.locationTable.tableView.reloadData()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //causes keyboards to hide themselves when return is pressed or user clicks away
+        textField.resignFirstResponder()
+        return true
+    }
     
+    @IBAction func backClicked(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
 }
 
 //func searchBar( _ searchBar: UISearchBar, textDidChange searchText: String){
