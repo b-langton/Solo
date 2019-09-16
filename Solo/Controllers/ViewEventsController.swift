@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
-class ViewEventsController: UIViewController {
+class ViewEventsController: UIViewController, UISearchBarDelegate {
     var ref: DatabaseReference!
     var eventTableC: EventTableController!
     var bottomConstraint: NSLayoutConstraint!
@@ -17,9 +17,10 @@ class ViewEventsController: UIViewController {
     var widthConstraint: NSLayoutConstraint!
     var heightConstraint: NSLayoutConstraint!
    
+    @IBOutlet weak var eventSearchBar: UISearchBar!
     override func loadView(){
         super.loadView()
-        
+        self.eventSearchBar.delegate = self
         ref = Database.database().reference()
         
         self.eventTableC = EventTableController()
@@ -43,6 +44,9 @@ class ViewEventsController: UIViewController {
        
        
         // Do any additional setup after loading the view.
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.eventTableC.reorderTableCells(searchText: eventSearchBar.text)
     }
     
     @IBAction func backClicked(_ sender: Any) {
