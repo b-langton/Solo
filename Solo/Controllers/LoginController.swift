@@ -16,8 +16,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        var displayName: String!
-        var bitmojiAvatarUrl: String!  
+        
         //Create login with snapchat button
         let loginButton = SCSDKLoginButton() { (success : Bool, error : Error?) in
             if success {

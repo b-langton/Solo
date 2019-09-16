@@ -76,7 +76,7 @@ PODS:
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3)
   - GoogleDataTransport (1.2.0)
-  - GoogleDataTransportCCTSupport (1.0.3):
+  - GoogleDataTransportCCTSupport (1.0.4):
     - GoogleDataTransport (~> 1.2)
     - nanopb
   - GoogleUtilities/AppDelegateSwizzler (6.2.5):
@@ -145,7 +145,13 @@ DEPENDENCIES:
   - SnapSDK
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
+    - PINCache
+    - PINOperation
+    - SearchTextField
+    - SnapKit
+    - SnapSDK
+  trunk:
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
@@ -166,12 +172,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
-    - PINCache
-    - PINOperation
     - Protobuf
-    - SearchTextField
-    - SnapKit
-    - SnapSDK
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -187,7 +188,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 550df9be1f99f751d8fcde3ac342a1e21a0e6c42
   GoogleAppMeasurement: 86a82f0e1f20b8eedf8e20326530138fd71409de
   GoogleDataTransport: 8f9897b8e073687f24ca8d3c3a8013dec7d2d1cc
-  GoogleDataTransportCCTSupport: 51134d81fca795c60cc247d1cb6af63c3d67b8d8
+  GoogleDataTransportCCTSupport: 7455d07b98851aa63e4c05a34dad356ca588479e
   GoogleUtilities: e7dc37039b19df7fe543479d3e4a02ac8d11bb69
   "gRPC-C++": 9dfe7b44821e7b3e44aacad2af29d2c21f7cde83
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
@@ -201,6 +202,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SnapSDK: e0642fe1b670cfffc45801d31ca36f5c3e07297f
 
-PODFILE CHECKSUM: 949e201cb3e178ec538beb874491bdfac7a4c8b0
+PODFILE CHECKSUM: b7543c46522a1a90506648e1776ca47c938b826a
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.0.beta.2

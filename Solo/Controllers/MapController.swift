@@ -11,29 +11,29 @@ import MapKit
 import CoreLocation
 import UserNotifications
 import Firebase
-import SCSDKBitmojiKit
-class MapController: UIViewController {
-    var ref: DatabaseReference!
+import SCSDKLoginKit
+import SearchTextField
+
+class MapController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var MapView: MKMapView!
-    @IBOutlet weak var bitmoji: SCSDKBitmojiIconView!
+    @IBOutlet weak var bitmoji: UIButton!
+    @IBOutlet weak var searchBar: SearchTextField!
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Location/Map setup
+        ref = Database.database().reference()
         let locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()
         var point: MKPointAnnotation
-        ref = Database.database().reference()
-        ref.child("events").observeSingleEvent(of: .value, with: { (snapshot) in
-            for child: DataSnapshot in snapshot.children.allObjects as! [DataSnapshot] {
-                eventData.append((child.value as? [String:Any])!)
-                
-            }})
-            print(eventData.count, "init")
         let initiallocation = locationManager.location
         print(locationManager.location)
         let viewradius: CLLocationDistance = 2000
         if initiallocation != nil {
             centerMapOnLocation(location: initiallocation!)}
-        // Do any additional setup after loading the view.
+        //Drop map pins (Map annotations)
         for i in eventData {
             if String( describing: i["latitude"]!) != "None" && String( describing: i["longitude"]!) != "None" {
                 point = MKPointAnnotation()
@@ -42,9 +42,44 @@ class MapController: UIViewController {
                 MapView.addAnnotation(point)
             }
         }
-        
-        
+        searchBar.returnKeyType = UIReturnKeyType.search
+        //Set userStoppedTypingHandler for searchBar
+        searchBar.userStoppedTypingHandler = {
+            if let criteria = self.searchBar.text {
+                if criteria.count > 1 {
+                    
+                    // Show the loading indicator
+                    self.searchBar.showLoadingIndicator()
+                    var eventNames: Array<String> = []
+                    for event in eventData {
+                        eventNames.append(event["eventName"] as! String)
+                    }
+                    self.searchBar.filterStrings(eventNames)
+                    self.searchBar.stopLoadingIndicator()
+                }
+            }
         }
+        searchBar.delegate = self
+    }
+    
+    //BEN DO THIS, NATHAN NOT GOOD WITH MAP
+    func textFieldShouldReturn(_ searchBar: UITextField) -> Bool {
+        //Move mapview to center on the event being searched for but still display other event pins
+        return true
+    } 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let bitmojiurl = URL(string: bitmojiAvatarUrl) else {
+            print("NO BITMOJI")
+            return
+        }
+        let data = try? Data(contentsOf: bitmojiurl)
+        if let imageData = data {
+            let image = UIImage(data: imageData)
+            bitmoji.setBackgroundImage(image, for: .normal)
+        }
+    }
+    
     let regionRadius: CLLocationDistance = 1000
     
     func centerMapOnLocation(location: CLLocation){
@@ -52,17 +87,18 @@ class MapController: UIViewController {
         MapView.setRegion(coordinateRegion, animated: true)
     }
     
+    @IBAction func bitmojiClicked(_ sender: Any) {
+        print("Touched")
+    }
     
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
      
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    @IBAction func addEventClicked(_ sender: Any) {
-    }
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
 }
+
