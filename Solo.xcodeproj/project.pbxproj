@@ -12,7 +12,7 @@
 		7BDCEE04230F7FC50065E3B6 /* EventTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCEE03230F7FC50065E3B6 /* EventTableController.swift */; };
 		7BDD3D682309D1590023C722 /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD3D672309D1590023C722 /* AddEventController.swift */; };
 		7BEC08AE23148D33000436C9 /* EventTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEC08AD23148D33000436C9 /* EventTable.swift */; };
-		8B057182A5EC495428F54660 /* Pods_Solo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288C0E54CD817AD11E27AC0E /* Pods_Solo.framework */; };
+		CD83DEA5B4D6465E77F0F7AB /* Pods_Solo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6835C8C831074A9DDE427CA /* Pods_Solo.framework */; };
 		D90B274023105D55007C8661 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D90B273F23105D55007C8661 /* GoogleService-Info.plist */; };
 		D925972D22ACB68300A096A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D925972C22ACB68300A096A3 /* AppDelegate.swift */; };
 		D925972F22ACB68300A096A3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D925972E22ACB68300A096A3 /* LoginController.swift */; };
@@ -49,14 +49,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03C7B5A95567799499B94D49 /* Pods-Solo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.debug.xcconfig"; path = "Target Support Files/Pods-Solo/Pods-Solo.debug.xcconfig"; sourceTree = "<group>"; };
-		288C0E54CD817AD11E27AC0E /* Pods_Solo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5823546DE766C2773595393D /* Pods-Solo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.release.xcconfig"; path = "Target Support Files/Pods-Solo/Pods-Solo.release.xcconfig"; sourceTree = "<group>"; };
+		185F304E07EC5C0FC23AF027 /* Pods-Solo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.release.xcconfig"; path = "Target Support Files/Pods-Solo/Pods-Solo.release.xcconfig"; sourceTree = "<group>"; };
 		7B92E5C623074414005EED30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7B92E5CA23075843005EED30 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		7BDCEE03230F7FC50065E3B6 /* EventTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableController.swift; sourceTree = "<group>"; };
 		7BDD3D672309D1590023C722 /* AddEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
 		7BEC08AD23148D33000436C9 /* EventTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTable.swift; sourceTree = "<group>"; };
+		BBC88CC35CA0B207518407E1 /* Pods-Solo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solo.debug.xcconfig"; path = "Target Support Files/Pods-Solo/Pods-Solo.debug.xcconfig"; sourceTree = "<group>"; };
+		C6835C8C831074A9DDE427CA /* Pods_Solo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90B273F23105D55007C8661 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D925972922ACB68300A096A3 /* Solo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D925972C22ACB68300A096A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 				D9FC072D22D291400030D5C0 /* SCSDKCreativeKit.framework in Frameworks */,
 				D9FC072A22D2913A0030D5C0 /* SCSDKBitmojiKit.framework in Frameworks */,
 				D9FC072722D291360030D5C0 /* SCSDKCoreKit.framework in Frameworks */,
-				8B057182A5EC495428F54660 /* Pods_Solo.framework in Frameworks */,
+				CD83DEA5B4D6465E77F0F7AB /* Pods_Solo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +94,8 @@
 		A607A8F753AFE248DD23D6D5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				03C7B5A95567799499B94D49 /* Pods-Solo.debug.xcconfig */,
-				5823546DE766C2773595393D /* Pods-Solo.release.xcconfig */,
+				BBC88CC35CA0B207518407E1 /* Pods-Solo.debug.xcconfig */,
+				185F304E07EC5C0FC23AF027 /* Pods-Solo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 				D9FC072922D2913A0030D5C0 /* SCSDKBitmojiKit.framework */,
 				D9FC072C22D291400030D5C0 /* SCSDKCreativeKit.framework */,
 				D9FC072622D291360030D5C0 /* SCSDKCoreKit.framework */,
-				288C0E54CD817AD11E27AC0E /* Pods_Solo.framework */,
+				C6835C8C831074A9DDE427CA /* Pods_Solo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,12 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D925973B22ACB68500A096A3 /* Build configuration list for PBXNativeTarget "Solo" */;
 			buildPhases = (
-				42028264A79D1BE1EF7F8B57 /* [CP] Check Pods Manifest.lock */,
+				1513D1208EDB11DC63501CD2 /* [CP] Check Pods Manifest.lock */,
 				D925972522ACB68300A096A3 /* Sources */,
 				D925972622ACB68300A096A3 /* Frameworks */,
 				D925972722ACB68300A096A3 /* Resources */,
 				D9FC071F22D290700030D5C0 /* Embed Frameworks */,
-				564541A2699E01A78F8D3D87 /* [CP] Embed Pods Frameworks */,
+				602D01F7D917D4E37E93BD74 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,7 +237,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		42028264A79D1BE1EF7F8B57 /* [CP] Check Pods Manifest.lock */ = {
+		1513D1208EDB11DC63501CD2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -259,7 +259,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		564541A2699E01A78F8D3D87 /* [CP] Embed Pods Frameworks */ = {
+		602D01F7D917D4E37E93BD74 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -433,7 +433,7 @@
 		};
 		D925973C22ACB68500A096A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03C7B5A95567799499B94D49 /* Pods-Solo.debug.xcconfig */;
+			baseConfigurationReference = BBC88CC35CA0B207518407E1 /* Pods-Solo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
@@ -457,7 +457,7 @@
 		};
 		D925973D22ACB68500A096A3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5823546DE766C2773595393D /* Pods-Solo.release.xcconfig */;
+			baseConfigurationReference = 185F304E07EC5C0FC23AF027 /* Pods-Solo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
